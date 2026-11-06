@@ -15,4 +15,3 @@
 1. Rama desde `main`: `hotfix/descripcion`.
 2. PR hacia `main` (merge commit) y release con versión de parche (v1.0.1).
 3. PR de `main` → `develop` para no perder el arreglo.
-4. 
