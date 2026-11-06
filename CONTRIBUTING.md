@@ -2,16 +2,17 @@
 
 ## Flujo
 1. Toma un issue del tablero y muévelo a "In progress".
-2. Crea una rama desde `main` con el ID del issue: `feat/API-11-login-google`, `fix/MOB-31-monto-vacio`.
-3. Abre un Pull Request usando la plantilla y escribe `Closes #número` para que el issue se cierre solo.
-4. Cuando el CI esté en verde, haz merge con **Squash and merge**.
+2. Crea una rama desde `develop` con el ID del issue: `feat/API-11-login-google`, `fix/MOB-31-monto-vacio`.
+3. Abre un Pull Request hacia `develop` y escribe `Closes #número`.
+4. Con el CI en verde, haz merge con **Squash and merge**.
 
-## Commits (Conventional Commits)
-- `feat:` nueva funcionalidad
-- `fix:` corrección de error
-- `chore:` mantenimiento, configuración
-- `docs:` documentación
-- `test:` pruebas
-- `refactor:` cambio de código sin cambiar comportamiento
+## Releases
+- `main` es producción: solo recibe PRs desde `develop` (o hotfixes).
+- PR `develop` → `main` con título "Release vX.Y.Z", usando **Create a merge commit** (nunca squash).
+- Después del merge, crea el tag y la release en `main` (Releases → Draft a new release).
 
-Ejemplo: `feat(auth): login con Google`
+## Hotfix
+1. Rama desde `main`: `hotfix/descripcion`.
+2. PR hacia `main` (merge commit) y release con versión de parche (v1.0.1).
+3. PR de `main` → `develop` para no perder el arreglo.
+4. 
